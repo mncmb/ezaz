@@ -129,7 +129,7 @@
   },
     "variables": {
 
-        "uri_basedir": "https://raw.githubusercontent.com/OTRF/Blacksmith/main/",
+        "uri_basedir": "https://raw.githubusercontent.com/mncmb/ezaz/main/",
         "uri_sysmonWindowsParserPackTemplate": "https://raw.githubusercontent.com/DefensiveOrigins/DO-LAB/main/Monitoring/SysmonFullDeployment.json",
         "uri_DeploySentinel": "https://raw.githubusercontent.com/DefensiveOrigins/DO-LAB/main/Sentinel/azuredeploy-sentinel.json",
         "uri_collectWinDataSources": "https://raw.githubusercontent.com/DefensiveOrigins/DO-LAB/main/Sentinel/templates/winDataSources.json",
