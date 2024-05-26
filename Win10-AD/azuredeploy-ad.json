@@ -29,7 +29,9 @@
       },
       "defaultValue": {
         "array": [ 
-                {"FirstName":"Norah","LastName":"Martha","SamAccountName":"nmartha","Department":"Human Resources","JobTitle":"HR Director","Identity":"Users","UserContainer":"DomainUsers"}
+                {
+                    }
+                    //{"FirstName":"Norah","LastName":"Martha","SamAccountName":"nmartha","Department":"Human Resources","JobTitle":"HR Director","Identity":"Users","UserContainer":"DomainUsers"}
             /*
           {
             "FirstName": "Bridget",
