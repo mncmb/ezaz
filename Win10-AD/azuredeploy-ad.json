@@ -28,7 +28,9 @@
         "description": "Domain users to create after domain is set up."
       },
       "defaultValue": {
-        "array": [/*
+        "array": [ {
+            }
+            /*
           {
             "FirstName": "Bridget",
             "LastName": "Horrarah",
@@ -881,8 +883,8 @@
                     }
                 }
             }
-        },
-        {
+        }
+        /*{
             "name": "[concat(variables('domainController')[0].vmName, '-deployADCS')]",
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2019-10-01",
@@ -945,7 +947,7 @@
                     }
                 }
             }
-        }
+        }*/
     ],
   "outputs": {
     "virtualNetworkName": {
