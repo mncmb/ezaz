@@ -60,13 +60,6 @@
         "description": "Size of the virtual machine. Reference: https://docs.microsoft.com/en-us/azure/virtual-machines/sizes-general"
       }
     },
-    "location": {
-      "type": "string",
-      "defaultValue": "[resourceGroup().location]",
-      "metadata": {
-        "description": "Location for all resources."
-      }
-    },
     "doenablesysmon": {
       "type": "bool",
       "defaultValue": true
@@ -95,7 +88,8 @@
         "vmNameLinux": "Nux01",
         "doc2ubuntusku": "22.04-lts",
         "doremoteaccessmode": "AllowPublicIP",
-        "linuxSetupScript": "C2/scripts/Install-Linux.sh"
+        "linuxSetupScript": "C2/scripts/Install-Linux.sh",
+        "location": "[resourceGroup().location]"
     },
   "resources": [
     {
@@ -153,7 +147,7 @@
             "value": "[parameters('doenableaadconnect')]"
           },
           "location": {
-            "value": "[parameters('location')]"
+            "value": "[variables('location')]"
           },
           "uri_baseDir": {
             "value": "[variables('uri_basedir')]"
@@ -210,7 +204,7 @@
         "Deploy-Linux",
         "Deploy-ActiveDirectoryEnvironment"
       ],
-      "location": "[parameters('location')]",
+      "location": "[variables('location')]",
       "properties": {
         "allowVirtualNetworkAccess": true,
         "allowForwardedTraffic": false,
@@ -229,7 +223,7 @@
         "Deploy-Linux",
         "Deploy-ActiveDirectoryEnvironment"
       ],
-      "location": "[parameters('location')]",
+      "location": "[variables('location')]",
       "properties": {
         "allowVirtualNetworkAccess": true,
         "allowForwardedTraffic": false,
