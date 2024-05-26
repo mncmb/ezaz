@@ -736,7 +736,7 @@
                         "value": "[parameters('adminPassword')]"
                     },
                     "domainUsers": {
-                        "value": ""
+                        "value": "[array('')]"
                     },
                     "location": {
                         "value": "[parameters('location')]"
