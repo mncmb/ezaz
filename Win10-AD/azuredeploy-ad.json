@@ -22,13 +22,13 @@
         "description": "Password for the all Virtual machines. The password must be at least 8 characters in length and must contain at least one digit, one non-alphanumeric character, and one upper or lower case letter"
       }
     },
-    /*"domainUsers": {
+    "domainUsers": {
       "type": "secureObject",
       "metadata": {
         "description": "Domain users to create after domain is set up."
       },
       "defaultValue": {
-        "array": [
+        "array": [/*
           {
             "FirstName": "Bridget",
             "LastName": "Horrarah",
@@ -88,10 +88,10 @@
             "Password": "S3nData!1122",
             "Identity": "Users",
             "UserContainer": "DomainUsers"
-          }
+          }*/
         ]
       }
-    },*/
+    },
     "remoteAccessMode": {
       "type": "string",
       "metadata": {
@@ -736,7 +736,7 @@
                         "value": "[parameters('adminPassword')]"
                     },
                     "domainUsers": {
-                        "value": "[createObject('')]"
+                        "value": "[parameters('domainUsers')]"
                     },
                     "location": {
                         "value": "[parameters('location')]"
