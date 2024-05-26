@@ -398,6 +398,7 @@
 
         // Additional Variables
         "allEndpoints": "[concat(variables('allWinWKS'), variables('domainController'))]",
+        // ALLENDPOINTS that get a public IP
         "domainNameArray": "[split(parameters('domainFQDN'),'.')]",
         "ouPath": "[concat('OU=Workstations; DC=', variables('domainNameArray')[0], '; DC=', variables('domainNameArray')[1])]",
 

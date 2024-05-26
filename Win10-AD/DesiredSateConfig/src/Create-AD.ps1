@@ -162,88 +162,89 @@ configuration Create-AD {
         }
 
         # ***** Create Domain Users *****
-        xScript CreateDomainUsers
-        {
-            SetScript = {
-                # Verifying ADWS service is running
-                $ServiceName = 'ADWS'
-                $arrService = Get-Service -Name $ServiceName
-
-                while ($arrService.Status -ne 'Running')
-                {
-                    Start-Service $ServiceName
-                    Start-Sleep -seconds 5
-                    $arrService.Refresh()
-                }
-
-                $DomainName = $using:domainFQDN
-                $DomainName1,$DomainName2 = $DomainName.split('.')
-                $ADServer = $using:ComputerName+"."+$DomainName
-
-                $NewDomainUsers = $using:DomainUsers
-                
-                foreach ($DomainUser in $NewDomainUsers)
-                {
-                    $UserPrincipalName = $DomainUser.SamAccountName + "@" + $DomainName
-                    $DisplayName = $DomainUser.LastName + " " + $DomainUser.FirstName
-                    $OUPath = "OU="+$DomainUser.UserContainer+",DC=$DomainName1,DC=$DomainName2"
-                    $SamAccountName = $DomainUser.SamAccountName
-                    $ServiceName = $DomainUser.FirstName
-
-                    $UserExists = Get-ADUser -LDAPFilter "(sAMAccountName=$SamAccountName)"
-
-                    if ($UserExists -eq $Null)
-                    {
-                        write-host "Creating user $UserPrincipalName .."
-                        New-ADUser -Name $DisplayName `
-                        -DisplayName $DisplayName `
-                        -GivenName $DomainUser.FirstName `
-                        -Surname $DomainUser.LastName `
-                        -Department $DomainUser.Department `
-                        -Title $DomainUser.JobTitle `
-                        -UserPrincipalName $UserPrincipalName `
-                        -SamAccountName $DomainUser.SamAccountName `
-                        -Path $OUPath `
-                        -AccountPassword (ConvertTo-SecureString $DomainUser.Password -AsPlainText -force) `
-                        -Enabled $true `
-                        -PasswordNeverExpires $true `
-                        -Server $ADServer
-
-                        if($DomainUser.Identity -Like "Domain Admins")
-                        {
-                            $DomainAdminUser = $DomainUser.SamAccountName
-                            $Groups = @('domain admins','schema admins','enterprise admins')
-                            $Groups | ForEach-Object{
-                                $members = Get-ADGroupMember -Identity $_ -Recursive | Select-Object -ExpandProperty Name
-                                if ($members -contains $DomainAdminUser)
-                                {
-                                    Write-Host "$DomainAdminUser exists in $_ "
-                                }
-                                else {
-                                    Add-ADGroupMember -Identity $_ -Members $DomainAdminUser
-                                }
-                            }
-                        }
-                        if($DomainUser.JobTitle -Like "Service Account")
-                        {
-                            setspn -a $ServiceName/$DomainName $DomainName1\$SamAccountName
-                        }
-                    }
-                }
-            }
-            GetScript =  
-            {
-                # This block must return a hashtable. The hashtable must only contain one key Result and the value must be of type String.
-                return @{ "Result" = "false" }
-            }
-            TestScript = 
-            {
-                # If it returns $false, the SetScript block will run. If it returns $true, the SetScript block will not run.
-                return $false
-            }
-            DependsOn = "[xScript]CreateOUs"
-        }
-    }
+#        xScript CreateDomainUsers
+#        {
+#            SetScript = {
+#                # Verifying ADWS service is running
+#                $ServiceName = 'ADWS'
+#                $arrService = Get-Service -Name $ServiceName
+#
+#                while ($arrService.Status -ne 'Running')
+#                {
+#                    Start-Service $ServiceName
+#                    Start-Sleep -seconds 5
+#                    $arrService.Refresh()
+#                }
+#
+#                $DomainName = $using:domainFQDN
+#                $DomainName1,$DomainName2 = $DomainName.split('.')
+#                $ADServer = $using:ComputerName+"."+$DomainName
+#
+#                $NewDomainUsers = $using:DomainUsers
+#                
+#                foreach ($DomainUser in $NewDomainUsers)
+#                {
+#                    $UserPrincipalName = $DomainUser.SamAccountName + "@" + $DomainName
+#                    $DisplayName = $DomainUser.LastName + " " + $DomainUser.FirstName
+#                    $OUPath = "OU="+$DomainUser.UserContainer+",DC=$DomainName1,DC=$DomainName2"
+#                    $SamAccountName = $DomainUser.SamAccountName
+#                    $ServiceName = $DomainUser.FirstName
+#
+#                    $UserExists = Get-ADUser -LDAPFilter "(sAMAccountName=$SamAccountName)"
+#
+#                    if ($UserExists -eq $Null)
+#                    {
+#                        write-host "Creating user $UserPrincipalName .."
+#                        New-ADUser -Name $DisplayName `
+#                        -DisplayName $DisplayName `
+#                        -GivenName $DomainUser.FirstName `
+#                        -Surname $DomainUser.LastName `
+#                        -Department $DomainUser.Department `
+#                        -Title $DomainUser.JobTitle `
+#                        -UserPrincipalName $UserPrincipalName `
+#                        -SamAccountName $DomainUser.SamAccountName `
+#                        -Path $OUPath `
+#                        -AccountPassword (ConvertTo-SecureString $DomainUser.Password -AsPlainText -force) `
+#                        -Enabled $true `
+#                        -PasswordNeverExpires $true `
+#                        -Server $ADServer
+#
+#                        if($DomainUser.Identity -Like "Domain Admins")
+#                        {
+#                            $DomainAdminUser = $DomainUser.SamAccountName
+#                            $Groups = @('domain admins','schema admins','enterprise admins')
+#                            $Groups | ForEach-Object{
+#                                $members = Get-ADGroupMember -Identity $_ -Recursive | Select-Object -ExpandProperty Name
+#                                if ($members -contains $DomainAdminUser)
+#                                {
+#                                    Write-Host "$DomainAdminUser exists in $_ "
+#                                }
+#                                else {
+#                                    Add-ADGroupMember -Identity $_ -Members $DomainAdminUser
+#                                }
+#                            }
+#                        }
+#                        if($DomainUser.JobTitle -Like "Service Account")
+#                        {
+#                            setspn -a $ServiceName/$DomainName $DomainName1\$SamAccountName
+#                        }
+#                    }
+#                }
+#            }
+#            GetScript =  
+#            {
+#                # This block must return a hashtable. The hashtable must only contain one key Result and the value must be of type String.
+#                return @{ "Result" = "false" }
+#            }
+#            TestScript = 
+#            {
+#                # If it returns $false, the SetScript block will run. If it returns $true, the SetScript block will not run.
+#                return $false
+#            }
+#            DependsOn = "[xScript]CreateOUs"
+#        }
+#        
+#    }
 }
 
 function Get-NetBIOSName {
