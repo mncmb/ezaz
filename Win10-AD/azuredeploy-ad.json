@@ -151,7 +151,7 @@
       },
       "defaultValue": "WORKSTATION"
     },
-    "windowsDesktopSKU": {
+    /*"windowsDesktopSKU": {
       "type": "string",
       "defaultValue": "win10-22h2-pro",
       "metadata": {
@@ -172,7 +172,7 @@
     "windowsServerVersion": {
       "type": "string",
       "defaultValue": "20348.2031.231006"
-    },
+    },*/
     "vmSize": {
       "type": "string",
       "defaultValue": "Standard_B2s",
@@ -446,7 +446,7 @@
                 ]
             }
         },
-        {
+        /*{
             "condition": "[equals(parameters('remoteAccessMode'), 'AzureBastionHost')]",
             "comments": "Default Network Security Group for Azure Bastion Host",
             "type": "Microsoft.Network/networkSecurityGroups",
@@ -512,15 +512,15 @@
                     }
                 ]
             }
-        },
+        },*/
         {
             "type": "Microsoft.Network/virtualNetworks",
             "apiVersion": "2019-02-01",
             "name": "[variables('virtualNetworkName')]",
             "location": "[parameters('location')]",
             "dependsOn": [
-                "[resourceId('Microsoft.Network/networkSecurityGroups', variables('nsg-default-name'))]",
-                "[resourceId('Microsoft.Network/networkSecurityGroups', variables('nsg-bastion-host-name'))]"
+                "[resourceId('Microsoft.Network/networkSecurityGroups', variables('nsg-default-name'))]"//,
+                //"[resourceId('Microsoft.Network/networkSecurityGroups', variables('nsg-bastion-host-name'))]"
             ],
             "properties": {
                 "addressSpace": {
@@ -530,7 +530,7 @@
                 },
                 "subnets": "[variables('allSubnets')]"
             }
-        },
+        },/*
         {
             "condition": "[equals(parameters('remoteAccessMode'),'AzureBastionHost')]",
             "type": "Microsoft.Network/publicIPAddresses",
@@ -570,7 +570,7 @@
                     }
                 ]
             }
-        },
+        },*/
         {
             "condition": "[equals(parameters('remoteAccessMode'),'AllowPublicIP')]",
             "type": "Microsoft.Network/publicIPAddresses",
