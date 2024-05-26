@@ -7,8 +7,9 @@ sudo -s
 touch /etc/DOAZLAB/DOAZLABLog
 
 
-apt update
-apt install -y xrdp 
 
+## needs a desktop env
+# apt update
+# apt install -y xrdp 
 # create certificate required for XRDP
-openssl req -x509 -sha384 -newkey rsa:3072 -nodes -keyout /etc/xrdp/key.pem -out /etc/xrdp/cert.pem -days 365 -batch
+# openssl req -x509 -sha384 -newkey rsa:3072 -nodes -keyout /etc/xrdp/key.pem -out /etc/xrdp/cert.pem -days 365 -batch
