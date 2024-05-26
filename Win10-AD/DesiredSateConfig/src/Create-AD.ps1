@@ -14,7 +14,7 @@ configuration Create-AD {
         [Parameter(Mandatory)]
         [Object]$DomainUsers
     ) 
-    
+
     Import-DscResource -ModuleName ActiveDirectoryDsc, NetworkingDsc, xPSDesiredStateConfiguration, xDnsServer, ComputerManagementDsc
     
     [String] $DomainNetbiosName = (Get-NetBIOSName -DomainFQDN $DomainFQDN)
@@ -244,7 +244,7 @@ configuration Create-AD {
 #            DependsOn = "[xScript]CreateOUs"
 #        }
 #        
-#    }
+    }
 }
 
 function Get-NetBIOSName {
