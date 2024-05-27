@@ -968,10 +968,10 @@
     "DCPublicIP": {
       "type": "string",
       "value": "[reference(resourceId('Microsoft.Network/publicIPAddresses','pip-DC01')).IpAddress]"
-    },
-    "WSPublicIP": {
-      "type": "string",
-      "value": "[reference(resourceId('Microsoft.Network/publicIPAddresses','pip-WS05')).IpAddress]"
+    //},
+    //"WSPublicIP": {
+    //  "type": "string",
+    //  "value": "[reference(resourceId('Microsoft.Network/publicIPAddresses','pip-WS05')).IpAddress]"
     }
   }
 }
