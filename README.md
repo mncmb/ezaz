@@ -21,7 +21,7 @@ The  Defensive Origins Lab (DO-LAB) Environment is used during the Defensive Ori
 
 Click the button below to start the deployment of the Defensive Origins Lab Environment within your Azure account.
 
-[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmncmb%2Fezaz%2Fmain%2Fazure-deploy.json)
+[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmncmb%2Fezaz%2Fmain%2Fuidefinition.json)
 
 ## Azure Cloud Locations/Regions
 While the deployment within Azure should be region agnostic, some deployed resources may not be available in all regions.
