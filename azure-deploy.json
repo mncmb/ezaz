@@ -77,7 +77,9 @@
     }
   },
     "variables": {
-
+        // ###############################
+        // 
+        // ###############################
         "uri_basedir": "https://raw.githubusercontent.com/mncmb/ezaz/main/",
         "uri_azure_win10_ad": "Win10-AD/azuredeploy-ad.json",
         "uri_azure_c2": "C2/azuredeploy-c2.json",
@@ -197,7 +199,7 @@
       }
     },
     {
-      "name": "vnet-c2/peering-to-remote-vnet-win",
+      "name": "vnet-linux/peering-to-remote-vnet-win",
       "type": "Microsoft.Network/virtualNetworks/virtualNetworkPeerings",
       "apiVersion": "2019-11-01",
       "dependsOn": [
@@ -216,7 +218,7 @@
       }
     },
     {
-      "name": "vnet-win/peering-to-remote-vnet-c2",
+      "name": "vnet-win/peering-to-remote-vnet-linux",
       "type": "Microsoft.Network/virtualNetworks/virtualNetworkPeerings",
       "apiVersion": "2019-11-01",
       "dependsOn": [

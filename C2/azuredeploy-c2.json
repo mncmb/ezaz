@@ -123,18 +123,6 @@
             },
             "defaultValue": "snet-c2"
         },
-        "c2Framework": {
-            "type": "string",
-            "defaultValue": "metasploit",
-            "allowedValues": [
-                "empire",
-                "covenant",
-                "metasploit"
-            ],
-            "metadata": {
-                "description": "C2 framework to deploy"
-            }
-        },
         "location": {
             "type": "string",
             "defaultValue": "[resourceGroup().location]",
@@ -151,7 +139,7 @@
         }
     },
     "variables": {
-        "storageAccountName": "[concat(uniquestring(resourceGroup().id, parameters('utcValue')))]",
+        "storageAccountName": "[concat(uniquestring(resourceGroup().id, 'linux',parameters('utcValue')))]",
         "doc2pipname": "[concat('pip-', variables('vmName'))]",
         "virtualNetworkName": "[parameters('virtualNetworkName')]",
         "virtualNetworkAddressRange": "[parameters('virtualNetworkAddressRange')]",
