@@ -189,9 +189,9 @@
           "allowedIPAddresses": {
             "value": "[parameters('allowedIPAddresses')]"
           },
-          "c2Framework": {
-            "value": "[variables('doc2')]"
-          },
+          //"c2Framework": {
+          //  "value": "[variables('doc2')]"
+          //},
           "linuxSetupScript": {
             "value": "[uri(variables('uri_basedir'), variables('linuxSetupScript'))]"
           }
@@ -245,10 +245,10 @@
     "DCPublicIP": {
       "type": "string",
       "value": "[reference('Deploy-ActiveDirectoryEnvironment').outputs.DCPublicIP.value]"
-    },
-    "WSPublicIP": {
-      "type": "string",
-      "value": "[reference('Deploy-ActiveDirectoryEnvironment').outputs.WSPublicIP.value]"
+    //},
+    //"WSPublicIP": {
+    //  "type": "string",
+    //  "value": "[reference('Deploy-ActiveDirectoryEnvironment').outputs.WSPublicIP.value]"
     }
   }
 }
