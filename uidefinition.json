@@ -4,7 +4,6 @@
 	"version": "0.1.2-preview",
 	"parameters": {
 		"config": {
-			"isWizard": true,
 			"basics": {
 				"description": "<img width=450 src=\"hhttps://raw.githubusercontent.com/mncmb/ezaz/main/images/shrek.jpg\">\n\n\n EZAZ Azure Lab Environment\n",
 				"location": {
@@ -91,6 +90,7 @@
 									"Standard_D2s_v4",
 									"Standard_D2s_v5"
 								],
+								"osPlatform": "Windows",
 								"visible": true
 							},
 							{
