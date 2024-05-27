@@ -118,18 +118,18 @@
           "vmNamePrefix": {
             "value": "[variables('donameprefix')]"
           },
-          "windowsDesktopSKU": {
-            "value": "[variables('doWSKU')]"
-          },
-          "windowsServerSKU": {
-            "value": "[variables('doServerSKU')]"
-          },
+          //"windowsDesktopSKU": {
+          //  "value": "[variables('doWSKU')]"
+          //},
+          //"windowsServerSKU": {
+          //  "value": "[variables('doServerSKU')]"
+          //},
           "vmSize": {
             "value": "[parameters('vmSize')]"
           },
-          "windowsServerVersion": {
-            "value": "[parameters('windowsServerVersion')]"
-          },
+          //"windowsServerVersion": {
+          //  "value": "[parameters('windowsServerVersion')]"
+          //},
           "domainFQDN": {
             "value": "[parameters('domainFQDN')]"
           },
