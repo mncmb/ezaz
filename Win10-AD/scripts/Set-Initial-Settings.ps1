@@ -14,14 +14,14 @@ param (
 & .\Prepare-Box.ps1
 
 # Windows Security Audit Categories
-if ($SetupType -eq 'DC')
-{
-    & .\Enable-WinAuditCategories.ps1 -SetDC
-}
-else
-{
-    & .\Enable-WinAuditCategories.ps1
-}
+#if ($SetupType -eq 'DC')
+#{
+#    & .\Enable-WinAuditCategories.ps1 -SetDC
+#}
+#else
+#{
+#    & .\Enable-WinAuditCategories.ps1
+#}
 
 # PowerShell Logging
 & .\Enable-PowerShell-Logging.ps1
