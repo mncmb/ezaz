@@ -1,4 +1,4 @@
-![](images/Shrek.jpg)
+
 # Deploy Lab Environment
 
 Click the button below to start the deployment of the Lab Environment within your Azure account.
