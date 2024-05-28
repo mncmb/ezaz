@@ -5,7 +5,7 @@
 	"parameters": {
 		"config": {
 			"basics": {
-				"description": "<img width=450 src=\"https://raw.githubusercontent.com/mncmb/ezaz/main/images/Shrek.jpg\">\n\n\n EZAZ Azure Lab Environment\n",
+				"description": "<img src=\"https://raw.githubusercontent.com/mncmb/ezaz/main/images/Shrek.jpg\">\n\n\n EZAZ Azure Lab Environment\n",
 				"location": {
 					"label": "Location",
 					"toolTip": "Location for all resources",
