@@ -93,7 +93,7 @@
             "metadata": {
                 "description": "Name of the Virtual Network"
             },
-            "defaultValue": "vnet-c2"
+            "defaultValue": "vnet-Linux"
         },
         "virtualNetworkAddressRange": {
             "type": "string",
