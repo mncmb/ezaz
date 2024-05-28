@@ -575,11 +575,11 @@
             "condition": "[equals(parameters('remoteAccessMode'),'AllowPublicIP')]",
             "type": "Microsoft.Network/publicIPAddresses",
             "apiVersion": "2018-11-01",
-            "name": "[concat('pip-', variables('domainController')[copyIndex('vmPublicIpCopy')].vmName)]",
+            "name": "[concat('pip-', variables('allEndpoints')[copyIndex('vmPublicIpCopy')].vmName)]",
             "location": "[parameters('location')]",
             "copy": {
                 "name": "vmPublicIpCopy",
-                "count": "[length(variables('domainController'))]"
+                "count": "[length(variables('allEndpoints'))]"
             },
             "properties": {
                 "publicIPAllocationMethod": "Static",
