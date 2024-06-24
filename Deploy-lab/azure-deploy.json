@@ -89,7 +89,7 @@
         "doc2": "metasploit",
         "vmNameLinux": "Nux01",
         "doc2ubuntusku": "22.04-lts",
-        "doremoteaccessmode": "AllowPublicIP",
+        "doremoteaccessmode": "None",
         "linuxSetupScript": "C2/scripts/Install-Linux.sh",
         "location": "[resourceGroup().location]"
     },
