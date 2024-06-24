@@ -2,7 +2,7 @@
  configuration Install-Sysmon {
     param 
     ( 
-        [string]$SysmonConfigUrl = "https://raw.githubusercontent.com/DefensiveOrigins/DO-LAB/main/Monitoring/sysmon.xml"
+        [string]$SysmonConfigUrl = "https://raw.githubusercontent.com/Neo23x0/sysmon-config/master/sysmonconfig-export.xml"
     )
 
     Import-DscResource -ModuleName xPSDesiredStateConfiguration, ComputerManagementDsc

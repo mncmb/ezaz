@@ -337,7 +337,8 @@
                 "autoUpgradeMinorVersion": true,
                 "settings": {},
                 "protectedSettings": {
-                    "commandToExecute": "bash Install-Linux.sh",
+                    // adminPassword is passed as arg to install script here
+                    "commandToExecute": "[concat('bash Install-Linux.sh ', parameters('adminPasswordOrKey'))]",
                     "fileUris": [
                         "[parameters('linuxSetupScript')]"
                     ]
