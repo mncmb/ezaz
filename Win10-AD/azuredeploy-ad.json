@@ -561,7 +561,7 @@
                 }
             }
         },
-        {
+        /*{
             "name": "[concat(variables('allWinWKS')[copyIndex('InitialSetUpWKSCopy')].vmName, '/', variables('allWinWKS')[copyIndex('InitialSetUpWKSCopy')].extensionName)]",
             "type": "Microsoft.Compute/virtualMachines/extensions",
             "apiVersion": "2019-12-01",
@@ -605,6 +605,7 @@
                 "protectedSettings": {}
             }
         },
+        */
         {
             "name": "CreateADForest",
             "type": "Microsoft.Resources/deployments",
