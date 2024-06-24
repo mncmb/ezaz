@@ -12,7 +12,7 @@ $wc = new-object System.Net.WebClient
 $wc.DownloadFile('http://live.sysinternals.com/bginfo.exe', 'C:\ProgramData\bginfo.exe')
 
 # Copy Wallpaper
-$wc.DownloadFile('https://raw.githubusercontent.com/mncmb/ezaz/main/images/shrek.jpg', 'C:\ProgramData\APT1.jpg')
+$wc.DownloadFile('https://raw.githubusercontent.com/mncmb/ezaz/main/images/Shrek.jpg', 'C:\ProgramData\APT1.jpg')
 $wc.DownloadFile('https://raw.githubusercontent.com/mncmb/ezaz/main/Win10-AD/resources/DOLAB.gif', 'C:\ProgramData\DOLAB.gif')
 
 # Copy BGInfo config

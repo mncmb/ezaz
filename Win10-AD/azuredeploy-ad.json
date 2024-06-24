@@ -101,10 +101,11 @@
       "metadata": {
         "description": "Do you want to restrict access to your environment by a Public IP or set up an Azure Bastion Host. If the former, make sure you add your public IP address to the variable 'allowedIPAddresses'"
       },
-      "defaultValue": "AllowPublicIP",
+      "defaultValue": "None",
       "allowedValues": [
         "AllowPublicIP",
-        "AzureBastionHost"
+        "AzureBastionHost",
+        "None"
       ]
     },
     "allowedIPAddresses": {
