@@ -858,10 +858,10 @@
     "allWinVMsDeployed": {
       "type": "array",
       "value": "[variables('allEndpoints')]"
-    },
-    "DCPublicIP": {
-      "type": "string",
-      "value": "[reference(resourceId('Microsoft.Network/publicIPAddresses','pip-DC01')).IpAddress]"
+    //},
+    //"DCPublicIP": {
+    //  "type": "string",
+    //  "value": "[reference(resourceId('Microsoft.Network/publicIPAddresses','pip-DC01')).IpAddress]"
     //},
     //"WSPublicIP": {
     //  "type": "string",
