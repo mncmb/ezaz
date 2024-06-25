@@ -241,10 +241,10 @@
     "C2PublicIP": {
       "type": "string",
       "value": "[reference('Deploy-Linux').outputs.C2PublicIP.value]"
-    },
-    "DCPublicIP": {
-      "type": "string",
-      "value": "[reference('Deploy-ActiveDirectoryEnvironment').outputs.DCPublicIP.value]"
+    //},
+    //"DCPublicIP": {
+    //  "type": "string",
+    //  "value": "[reference('Deploy-ActiveDirectoryEnvironment').outputs.DCPublicIP.value]"
     //},
     //"WSPublicIP": {
     //  "type": "string",
