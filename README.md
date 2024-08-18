@@ -1,6 +1,6 @@
 
 # Azure based AD Lab Environment
-Create a Windows active directory domain environment
+Arm template to create a Windows active directory domain environment in one click
 - consists of 1 DC and variable amount of member servers
 - choose your own nix desktop on `jump host` (e.g. Kali, Remnux)
 ![](images/ad_and_kasm.png)
@@ -21,6 +21,14 @@ Click the button below to start the deployment of the Lab Environment within you
 * Windows Server 2022 /w Active Directory.
 * 0-X domain joined Windows Server 2022 - specified during setup 
 * Ubuntu 22.04LTS with KASM workspaces Virtual Desktop Infrastructure (VDI)
+
+| system | IP | 
+| --- | --- |
+| Domain controller | 192.168.2.4 |
+| Member server x | 192.168.2.(5+x) |
+| Kasm VDI | 10.0.0.2 |
+
+Starting with 0, the 2nd member server has IP 192.168.2.6 (5+1=6) 
 
 # Acknowledgments
 * DefensiveOrigins DOAZLAB: https://github.com/DefensiveOrigins/DO-LAB
