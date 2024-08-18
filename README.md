@@ -1,24 +1,26 @@
 
-# Deploy Lab Environment
+# Azure based AD Lab Environment
+Create a Windows active directory domain environment
+- consists of 1 DC and variable amount of member servers
+- choose your own nix desktop on `jump host` (e.g. Kali, Remnux)
+![](images/ad_and_kasm.png)
+
+## Setup
 
 Click the button below to start the deployment of the Lab Environment within your Azure account.
 
 [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmncmb%2Fezaz%2Fmain%2FDeploy-lab%2Fazure-deploy.json/createUIDefinitionUri/https%3A%2F%2Fraw.githubusercontent.com%2Fmncmb%2Fezaz%2Fmain%2FDeploy-lab%2FcreateUiDefinition.json)
 
-## Azure Cloud Locations/Regions
-While the deployment within Azure should be region agnostic, some deployed resources may not be available in all regions.
-The following locations have specifically been tested:
-* US East (any)
-* US West (any)
-* US Central (any)
+- deployment takes approx. 20 min 
+- afterwards connect to KASM with your credentials 
+  - user: `admin@kasm.local`, password: _specified during deployment_
+  - left navbar: select `workspaces > register` and install an image
+  - top navbar: switch to workspaces and start your image
 
-## Lab Environment
+## Lab systems
 * Windows Server 2022 /w Active Directory.
-  * Domain: doazlab.com
-* Windows Workstation 23h2-pro
-* Ubuntu 22.04LTS C2 with Metasploit
-* Sysmon Installation on Server and Workstation
-* Microsoft Sentinel Log Aggregation
+* 0-X domain joined Windows Server 2022 - specified during setup 
+* Ubuntu 22.04LTS with KASM workspaces Virtual Desktop Infrastructure (VDI)
 
 # Acknowledgments
 * DefensiveOrigins DOAZLAB: https://github.com/DefensiveOrigins/DO-LAB
