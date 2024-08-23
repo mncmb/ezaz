@@ -2,7 +2,9 @@
 # Azure based AD Lab Environment
 Azure ARM template to create a Windows active directory domain environment through the press of a button.
 - 1 DC + a variable amount of member servers (0-x)
-- Linux `jump host` with choosable OS (e.g. Kali, Remnux) based on [KASM](https://kasmweb.com/) 
+- Linux `jump host` with choosable OS (e.g. Kali, Remnux) based on [KASM](https://kasmweb.com/)
+
+
 ![](images/ad_and_kasm.png)
 
 ## Setup
