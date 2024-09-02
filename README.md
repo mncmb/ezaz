@@ -14,10 +14,14 @@ Press the button to start lab deployment within your Azure tenant.
 [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmncmb%2Fezaz%2Fmain%2FDeploy-lab%2Fazure-deploy.json/createUIDefinitionUri/https%3A%2F%2Fraw.githubusercontent.com%2Fmncmb%2Fezaz%2Fmain%2FDeploy-lab%2FcreateUiDefinition.json)
 
 - deployment takes approx. 20 min 
-- once done, connect to KASM with the credentials specified during config wizard 
-  - user: `admin@kasm.local`, password: _specified during setup_
+- once done, connect to KASM with the credentials specified during deployment configuration
   - left navbar: select `workspaces > register` and install an image
   - top navbar: switch to workspaces and start your image
+
+| credential | systems | 
+| --- | --- |
+| admin@kasm.local | KASM |
+| ezadmin | windows domain |
 
 ## Lab systems
 * Windows Server 2022 - domain controller
