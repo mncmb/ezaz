@@ -20,8 +20,8 @@ Press the button to start lab deployment within your Azure tenant.
 
 | credential | systems | 
 | --- | --- |
-| admin@kasm.local | KASM |
-| ezadmin | windows domain |
+| `admin@kasm.local` | KASM |
+| `ezadmin` | windows domain |
 
 ## Lab systems
 * Windows Server 2022 - domain controller
